@@ -1,0 +1,48 @@
+﻿
+@model List<About>
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Enthusiastic Computer Science student specializing in designing and developing websites using ASP.NET with extensive experience in database design and photoshop design work. always striving for innovation and excellence in every project I undertake.</p>
+        </div>
+        @foreach (var item in Model)
+        {
+
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <img src="../assets/img/b.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h3>Database Designer &amp; Web Developer.</h3>
+                    <p class="fst-italic">
+
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>@item.BirthDate</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>@item.Website</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>@item.Phone</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>@item.City</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>@item.Age</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>@item.Degree</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>@item.Email</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>@item.Freelance</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>
+                        I'm a programmer and a Computer Science student at Sana'a University in my third year of studying, I'm working in designing and developing projects.
+                        I'm data analyzer with high experience, I'm fluent in English Language and proficient in using computers.
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</section>

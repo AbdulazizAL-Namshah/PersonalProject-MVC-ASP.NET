@@ -1,0 +1,222 @@
+﻿@* @model MyProject.Models.Services
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3 style="text-shadow:2px 2px 10px  #3fbbc0;margin-top:150px;"><center>Create New Services</center></h3>
+
+<hr />
+<div class="row">
+    <center>
+        <div class="col-md-4" style="background-color:black; color:#fff;border-top-left-radius:20px;border:1px solid #333; border-bottom-right-radius:20px; width:1000px;height:60vh">
+
+            <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <p><div class="btn btn-dark" style="background-color:#444;border:1px solid; box-shadow:0 0 10px rgba(0,0,0,0.5); margin-top:75px; margin-bottom:8px">
+                    <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </p>
+               <p><div class="btn btn-info" style="margin-bottom:7px;color:#fff;border:1px solid #111; background-color:#555 ; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+                    <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </p>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-success" />
+                    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+    </center>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+ *@
+
+@model MyProject.Models.Services
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Background and centered title -->
+<div class="form-background">
+    <!-- Fixed Title at Top -->
+    @*     <h1 class="form-title-fixed">Create New Fact</h1>
+    *@
+    <!-- Description under the title, outside the form container -->
+    <h1 class="form-description">Create New Service</h1>
+
+    <!-- Centered Form Container -->
+    <div class="form-container">
+        <form asp-action="Create" class="form-content">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control fancy-input" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+
+            <!-- Description Field -->
+            <div class="form-group">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control fancy-input" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+                <input type="submit" value="Create" class="btn fancy-btn" />
+                <a asp-action="Index" class="btn fancy-btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+<!-- CSS for Fantastic Form Design -->
+<style>
+    /* Background styling */
+    .form-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #149ddd, #1e1f29);
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    /* Fixed Form Title */
+    .form-title-fixed {
+        color: #fff;
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    /* Description styling */
+    .form-description {
+        color: #fff;
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 70px;
+        padding: 10px;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        /* color: #ffffffb3;  Slightly lighter white for contrast 
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 70px; */
+        margin-bottom: 20px;
+        max-width: 600px;
+    }
+
+    /* Form container with glassmorphism */
+    .form-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 5px;
+    }
+
+    /* Form label styling */
+    .form-label {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Fancy Input styling */
+    .fancy-input {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        padding: 10px 15px;
+
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+        .fancy-input:focus {
+            outline: none;
+            border-color: #3fbbc0;
+            box-shadow: 0 0 8px rgba(63, 187, 192, 0.6);
+        }
+
+    /* Button styling */
+    .fancy-btn {
+        background: linear-gradient(135deg, #149ddd, #1e1f29);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
+    }
+
+        .fancy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+    .fancy-btn-secondary {
+        background: transparent;
+        color: #149ddd;
+        border: 1px solid #149ddd;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+        .fancy-btn-secondary:hover {
+            background: rgba(63, 187, 192, 0.2);
+            color: #fff;
+        }
+
+    /* Form actions */
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+</style>
+
+
+

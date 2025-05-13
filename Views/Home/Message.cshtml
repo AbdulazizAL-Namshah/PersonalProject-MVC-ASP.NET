@@ -1,0 +1,48 @@
+﻿
+@* @model MyProject.Models.Contact *@
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Testimonials</h2>
+            <center>
+                <a asp-action="Contact" style="background-color:#055;color:#fff;padding:10px 20px; border-radius:5px;cursor:pointer;">New Contact</a>
+
+
+            </center>
+        </div>
+      
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <!-- End testimonial item -->
+                @foreach (var item in Model)
+                {
+
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item" data-aos="fade-up">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                @item.Massege
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="../assets/img/profile.jpg" class="testimonial-img" alt="">
+                            <h3>@item.Name</h3>
+                            <h4>@item.Email</h4>
+                        </div>
+                    </div>
+
+
+
+                }
+
+            </div>
+
+
+           
+        </div>
+       
+</section>
+
+

@@ -1,0 +1,56 @@
+﻿ @model IEnumerable<MyProject.Models.Resume>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3><center style=" padding-left:50px; margin:50px;color:darkcyan;background-color:antiquewhite; animation:coloring 3s linear 2s infinite reverse">Resume View</center></h3>
+
+<p>
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-x"></i>&nbsp; Create New</a>
+</p>
+
+<table class="table table-dark table-hover" style="box-shadow: 0 0 10px rgba(0,0,0,0.5)">
+    <thead>
+        <tr style="text-align:center"><th>
+               Name
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+            Description
+            </th>
+            <th style="border-top-right-radius:15px">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr style="text-align:center">
+                <td class="table-success">
+                @item.Name
+            </td>
+                <td class="table-primary">
+                    @item.date
+            </td>
+                <td class="table-info">
+                    @item.location
+            </td>
+                <td class="table-secondary">
+                    @item.Description
+            </td>
+                <td class="table-light">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary"><i class="bi bi-pencil"></i>&nbsp;</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"> <i class="bi bi-trash3"></i>&nbsp;</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <center><a href="../Home/resume" class="btn btn-outline-dark" style="margin-right:10px">Resumes Page</a><a href="../Home/Admin" class="btn btn-outline-primary ">Back to Admin</a></center>
+</div>

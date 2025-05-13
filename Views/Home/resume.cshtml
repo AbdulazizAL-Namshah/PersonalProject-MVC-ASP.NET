@@ -1,0 +1,80 @@
+﻿<section id="resume" class="resume">
+    <div class="container">
+        <div class="section-title">
+            <h2>Resume</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+                <h3 class="resume-title">Sumary</h3>
+                <div class="resume-item pb-0">
+                    <h4>Abdulaziz Alnamshah</h4>
+                    <p><em>Innovative and deadline-driven Database Designer with a year of experience designing and developing user-centered create/print Institution database from initial concept to final, polished deliverable.</em></p>
+                    <ul>
+                        <li>Sana'a</li>
+                        <li>777 252 414</li>
+                        <li>Bina.Institution@gmail.com</li>
+                    </ul>
+                </div>
+
+                <h3 class="resume-title">Education</h3>
+                <div class="resume-item">
+                    <h4>Bachelor of Computer Science</h4>
+                    <h5>2022 - Now</h5>
+                    <p><em>Sana'a University, Round St, Yemen</em></p>
+                    <p>I took a variety of courses covering advanced topics such as web development, database ,computer networks and graphic designing.</p>
+                </div>
+                <div class="resume-item">
+                    <h4>Gratuated from Alnawabeeg High School</h4>
+                    <h5>2009 - 2020</h5>
+                    <p><em>Shamlan, Sana'a, Yemen</em></p>
+                    <p>Received a diploma with a focus on front-end development and English language.</p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Professional Experience</h3>
+                <div class="resume-item">
+                    <h4>Senior database design specialist</h4>
+                    <h5>2022 - Present</h5>
+                    <p><em>Sana'a university, Sana'a, Yemen </em></p>
+                    <ul>
+                        <li>Lead in the design, development, and safety in the security, layout, and production communication materials</li>
+                        <li>Efficiently creating a database for Electric generator company and managing it using innovate and awesome methods for data security and ease of dealing with this databaseby its user from the company using SQL Server. </li>
+                        <li>Creating and managing an integerated database for an Electric station, enhancing user-friendliness using SQL Server.</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Graphic design specialist</h4>
+                    <h5>2017 - 2018</h5>
+                    <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                    <ul>
+                        <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                        <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                        <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                        <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-title">
+                <h2>Excerpts</h2>
+            </div>
+
+             @foreach (var item in Model)
+                {
+            <div class="col-lg-6" data-aos="fade-up">
+               
+                    <div class="resume-item">
+                        <h3 class="resume-title">@item.Name</h3>
+                        <div class="resume-item pb-0">
+                            <h5>@item.date</h5>
+                            <h4><ul><li><em>@item.location</em></li></ul></h4>
+                            <p><em>@item.Description</em></p>
+                        </div>
+                    </div>
+                
+                </div>
+            }
+        </div>
+    </div>
+</section>
